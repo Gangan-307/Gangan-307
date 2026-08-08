@@ -36,5 +36,46 @@ jobs:
         with:
           target_branch: output
           build_dir: dist
+
+name: Metrics
+on:
+  # 允许手动触发运行
+  workflow_dispatch:
+  # 定时任务：每天凌晨 0 点自动运行一次
+  schedule:
+    - cron: "0 0 * * *"
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Generate Language Metrics
+        uses: lowlighter/metrics@latest
+        with:
+          # 使用你在 Secrets 中配置的 Token
+          token: ${{ secrets.METRICS_TOKEN }}
+
+          # 你的 GitHub 用户名
+          user: 你的GitHub用户名
+          
+          # 核心设置：设为空字符串 ""，表示不生成默认的大卡片，只保留下面启用的语言卡片
+          base: ""
+          
+          # 设定输出文件名
+          filename: github-metrics.svg
+
+          # 启用语言插件
+          plugin_languages: yes
+          # 忽略的语言（可根据需要自行增减，用逗号隔开）
+          plugin_languages_ignored: html, css, scss
+          # 显示百分比和大小
+          plugin_languages_details: bytes-size, percentage
+          # 限制最多显示的前 8 种语言
+          plugin_languages_limit: 8
+          # 核心设置：开启深入分析（分析 commit 记录，而不仅是当前仓库体积，从而生成更准确的占比图）
+          plugin_languages_indepth: yes
+          # 统计图表展示的部分
+          plugin_languages_sections: most-used
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
