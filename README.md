@@ -1,3 +1,4 @@
+## Hi there 👋
 ### 🐍 My GitHub Contributions
 
 <!-- 浅色模式展示 -->
@@ -7,13 +8,10 @@
   <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/Gangan-307/Gangan-307/output/github-contribution-grid-snake.svg">
 </picture>
 
-## Hi there 👋
-### 📊 
 
-[![](https://raw.githubusercontent.com/Gangan-307/Gangan-307/main/profile-summary-card-output/ayu_mirage/0-profile-details.svg)](https://github.com/vn7n24fzkq/github-profile-summary-cards)
-[![](https://raw.githubusercontent.com/Gangan-307/Gangan-307/main/profile-summary-card-output/ayu_mirage/1-repos-per-language.svg)](https://github.com/vn7n24fzkq/github-profile-summary-cards) [![](https://raw.githubusercontent.com/Gangan-307/Gangan-307/main/profile-summary-card-output/ayu_mirage/2-most-commit-language.svg)](https://github.com/vn7n24fzkq/github-profile-summary-cards)
-[![](https://raw.githubusercontent.com/Gangan-307/Gangan-307/main/profile-summary-card-output/ayu_mirage/3-stats.svg)](https://github.com/vn7n24fzkq/github-profile-summary-cards) [![](https://raw.githubusercontent.com/Gangan-307/Gangan-307/main/profile-summary-card-output/ayu_mirage/4-productive-time.svg)](https://github.com/vn7n24fzkq/github-profile-summary-cards)
-
+<p align="center">
+  <img src="./github-metrics.svg" alt="Language Metrics" />
+</p>
 <!--
 **Gangan-307/Gangan-307** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
