@@ -1,0 +1,20 @@
+name: GitHub-Profile-Summary-Cards
+
+on:
+  schedule: # 每天凌晨自动运行一次
+    - cron: "0 0 * * *"
+  workflow_dispatch: # 允许手动运行
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+      - name: Generate Summary Cards
+        uses: vn7n24fzkq/github-profile-summary-cards@release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          username: Gangan-307
