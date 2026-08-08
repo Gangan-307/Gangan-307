@@ -18,7 +18,7 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
 
           # 你的 GitHub 用户名
-          user: 你的GitHub用户名
+          user: Gangan-307
           
           # 核心设置：设为空字符串 ""，表示不生成默认的大卡片，只保留下面启用的语言卡片
           base: ""
