@@ -8,7 +8,9 @@
 </picture>
 
 ## Hi there 👋
+### 📊 
 
+![Language Metrics](./github-metrics.svg)
 <!--
 **Gangan-307/Gangan-307** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
