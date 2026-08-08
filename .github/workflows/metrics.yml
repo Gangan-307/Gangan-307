@@ -5,6 +5,11 @@ on:
   # 定时任务：每天凌晨 0 点自动运行一次
   schedule:
     - cron: "0 0 * * *"
+  # 每次修改配置并推送到 main 分支时也自动运行
+  push:
+    branches:
+      - main
+
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
@@ -20,7 +25,7 @@ jobs:
           # 你的 GitHub 用户名
           user: Gangan-307
           
-          # 核心设置：设为空字符串 ""，表示不生成默认的大卡片，只保留下面启用的语言卡片
+          # 设为空字符串 ""，表示不生成默认的大卡片，只保留下面启用的语言卡片
           base: ""
           
           # 设定输出文件名
@@ -28,29 +33,21 @@ jobs:
 
           # 启用语言插件
           plugin_languages: yes
-          # 忽略的语言（可根据需要自行增减，用逗号隔开）
+          # 忽略的语言
           plugin_languages_ignored: html, css, scss
           # 显示百分比和大小
           plugin_languages_details: bytes-size, percentage
           # 限制最多显示的前 8 种语言
           plugin_languages_limit: 8
-          # 核心设置：开启深入分析（分析 commit 记录，而不仅是当前仓库体积，从而生成更准确的占比图）
-          plugin_languages_indepth: yes
+          # 关闭深入历史分析，只分析当前代码，极大提升运行速度
+          plugin_languages_indepth: no
           # 统计图表展示的部分
           plugin_languages_sections: most-used
-          with:
-          token: ${{ secrets.METRICS_TOKEN }}
-          user: Gangan-307
-          base: ""
-          filename: github-metrics.svg
-          plugin_languages: yes
-          plugin_languages_ignored: html, css, scss
-          plugin_languages_details: bytes-size, percentage
-          plugin_languages_limit: 8
-          plugin_languages_indepth: no
-          plugin_languages_sections: most-used
+          
+          # === 新增和优化选项，解决数据为空的问题 ===
+          # 设为 0 表示解除“最近 14 天必须有推送”的限制，分析所有仓库
           plugin_languages_recent_days: 0
+          # 包含 fork 的仓库
           plugin_languages_other: yes
+          # 允许分析的语言分类（包含 programming 编程、markup 标记、data 数据，确保能扫描到各种文件）
           plugin_languages_categories: programming, markup, data
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
