@@ -9,7 +9,9 @@
 
 ## Hi there 👋
 ### 📊 
-
+<p align="center">
+  <img src="./profile-summary-card-output/classic/1-most-used-languages.svg" alt="Languages Pie" width="450px" />
+</p>
 ![Language Metrics](./github-metrics.svg)
 <!--
 **Gangan-307/Gangan-307** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
